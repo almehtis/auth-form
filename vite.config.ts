@@ -4,6 +4,7 @@ import postcssPresetEnv from 'postcss-preset-env'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/auth-form/",
   plugins: [svelte()],
   css: {
     postcss: {

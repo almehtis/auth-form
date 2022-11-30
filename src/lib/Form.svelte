@@ -26,7 +26,7 @@
 </script>
 
 
-<form on:submit|preventDefault={() => console.log('test')}>
+<form on:submit={() => location.assign('https://evilmartians.com/')}>
   <h1>Sign in</h1>
 
   <div class="input-block">
@@ -56,9 +56,9 @@
 
     <button class="eye-button" on:click={switchPasswordIcon} type="button">
       {#if isPasswordHidden}
-        <img src="../src/assets/eye-open.svg" alt="Open eye icon">
+        <img src="icons/eye-open.svg" alt="Open eye icon">
       {:else}
-        <img src="../src/assets/eye-none.svg" alt="Crossed eye icon">
+        <img src="icons/eye-none.svg" alt="Crossed eye icon">
       {/if}
     </button>
     <a href={href}>Forgot password?</a>
@@ -76,10 +76,11 @@
   <div class="lower-block">
     <button
     class="github-button"
+    on:click={() => location.assign('https://github.com/')}
     type="button"
     >
       <div class="github-button-entrails">
-        <img src="../src/assets/github-logo.svg" alt="Github logo">
+        <img src="icons/github-logo.svg" alt="Github logo">
         Sign in with GitHub account
       </div>
     </button>
@@ -127,7 +128,6 @@
   .eye-button {
     position: absolute;
     display: grid;
-    place-items: center;
     right: 0.5rem;
     top: 3rem;
     background-color: oklch(100% 0 0);
@@ -143,9 +143,14 @@
     background-color: oklch(95% 0 0);
   }
 
+  /* I think it's the better option to render this image properly on IOS devices */
   .eye-button > img {
-    height: 1rem;
-    width: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
 
   .error-message {
@@ -178,7 +183,7 @@
 
   .github-button {
     display: grid;
-    justify-items: center;
+    place-items: center;
     background-color: oklch(100% 0 0);
     font-size: inherit;
     border: 1px solid oklch(80% 0 0);
@@ -197,6 +202,7 @@
     grid-auto-flow: column;
     column-gap: 1rem;
     align-items: center;
+    color: oklch(0% 0 0) !important; /* for IOS devices */
   }
 
   a {
