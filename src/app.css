@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "MartianMono-Regular";
+  src: url('/fonts/MartianMono-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: "MartianMono-Bold";
+  src: url('/fonts/MartianMono-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: "MartianMono-Light";
+  src: url('/fonts/MartianMono-Light.woff2') format('woff2');
+}
+
+
+@font-face {
+  font-family: "MartianMono-ExtraLight";
+  src: url('/fonts/MartianMono-ExtraLight.woff2') format('woff2');
+}
+
+:root {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "MartianMono-Regular", san-serif;
+  font-weight: normal;
+
+  color-scheme: light dark;
+  color: oklch(100% 3.5594404092893915e-8 106.37411396324427 / 87%);
+  /* background-image: linear-gradient(-20deg, oklch(91.78% 0.039 303.42) 0%, oklch(98.18% 0.043 108.58) 100%);; */
+  background-color: oklch(0% 0 0);
+
+  font-synthesis: weight;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-height: 100vh;
+  overflow-y: hidden;
+}
+
+#app {
+  min-width: 100%;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: oklch(0% 0 0);
+    background-color: oklch(100% 0 0);
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  body {
+    align-items: flex-start;
+  }
+}
