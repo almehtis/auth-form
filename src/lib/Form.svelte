@@ -256,7 +256,7 @@
     font-size: 0.8rem;
   }
 
-  @media only screen and (min-width: 320px) and (max-width: 1024px) {
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
     form {
       margin-top: 1.5rem;
       max-width: fit-content;
