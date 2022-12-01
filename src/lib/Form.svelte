@@ -156,7 +156,7 @@
   .error-message {
     position: absolute;
     bottom: -1.5rem;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     color: oklch(61.22% 0.231 22.61);
   }
 
